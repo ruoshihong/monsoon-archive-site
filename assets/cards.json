@@ -1,0 +1,371 @@
+[
+  {
+    "city": "广州",
+    "category": "建筑",
+    "subject": "西关骑楼",
+    "title": "屋檐连成一条街",
+    "body": "广州的骑楼把楼上的房间延伸到街道上方，柱廊之间形成连续的遮雨空间。雨落在街面上，行人仍能沿着廊下经过店铺、停步交谈。建筑为一条街留出了可以继续走路和做生意的地方。",
+    "image": "雨中的西关骑楼，画面同时包含湿街面与廊下空间。",
+    "sources": [
+      {
+        "title": "广州骑楼与地方气候",
+        "url": "https://www.gz.gov.cn/zlgz/whgz/content/post_8564096.html"
+      }
+    ],
+    "photo": "assets/city-01.png",
+    "imageAlt": "西关骑楼主题照片"
+  },
+  {
+    "city": "深圳",
+    "category": "城市设施",
+    "subject": "香蜜公园的海绵设施",
+    "title": "给雨水留一点空间",
+    "body": "香蜜公园里的生态草沟、下凹绿地和景观湖，共同参与雨水的收集与滞留。雨水经过植物和土壤，部分下渗，部分被储存利用。散步时看到的一片绿地，也可能是城市接纳一场雨的地方。",
+    "image": "香蜜公园生态草沟或下凹绿地，能看清地面高差。",
+    "sources": [
+      {
+        "title": "香蜜公园的海绵设施",
+        "url": "https://cgj.sz.gov.cn/xsmh/gysz/twf/tyyd/content/post_10841281.html"
+      },
+      {
+        "title": "深圳水务局的香蜜公园科普",
+        "url": "https://swj.sz.gov.cn/ztzl/bmzdgz/nhmcsjs/shcy/content/post_12267885.html"
+      }
+    ],
+    "photo": "assets/city-02.jpg",
+    "imageAlt": "香蜜公园的海绵设施主题照片"
+  },
+  {
+    "city": "珠海",
+    "category": "食物",
+    "subject": "唐家湾萝兜粽",
+    "title": "粽叶里的雨季",
+    "body": "唐家湾的萝兜粽，用当地常见的萝兜叶包裹糯米与馅料，粽身修长，带着叶片的清香。端午前后也常是广东降雨集中的时段。粽叶、蒸煮的热气与屋外的雨声，可以构成一幅珠海的季节图景。",
+    "image": "完整的萝兜粽与剥开的粽子，保留长形粽叶。",
+    "connection_note": "节庆时段关联；雨声和热气为编辑画面，不声称该食物因雨季产生。",
+    "sources": [
+      {
+        "title": "唐家湾萝兜粽与地方植物",
+        "url": "https://www.zhuhai-hitech.gov.cn/gxxw/gxdt/content/post_3546018.html"
+      },
+      {
+        "title": "龙舟水的时段与成因",
+        "url": "https://swj.gz.gov.cn/swyw/rdxw/content/post_10817534.html"
+      }
+    ],
+    "photo": "assets/city-03.jpeg",
+    "imageAlt": "唐家湾萝兜粽主题照片"
+  },
+  {
+    "city": "汕头",
+    "category": "建筑",
+    "subject": "小公园骑楼街区",
+    "title": "沿着柱廊走过雨",
+    "body": "汕头小公园的街道围绕中山纪念亭展开，沿街骑楼把遮阳避雨的柱廊连在一起。街面被雨打湿时，廊下仍是店铺与行人相遇的空间。沿着这条有顶的步行路线，也能读到汕头老城的商业记忆。",
+    "image": "小公园骑楼柱廊的纵深视角，带出放射街道或纪念亭。",
+    "sources": [
+      {
+        "title": "汕头小公园的布局与骑楼",
+        "url": "https://www.shantou.gov.cn/hqsyq/hqxx/content/post_2199904.html"
+      }
+    ],
+    "photo": "assets/city-04.jpg",
+    "imageAlt": "小公园骑楼街区主题照片"
+  },
+  {
+    "city": "佛山",
+    "category": "日常与节庆物品",
+    "subject": "九江龙舟与木桨",
+    "title": "雨季里的龙舟桨",
+    "body": "九江的龙舟文化延续在船、木桨、鼓声和水面上的协作里。端午前后的竞渡时节，常与广东的龙舟水相遇。一支划入水中的桨，把雨季的河流、身体的节奏和一起完成的节日连接起来。",
+    "image": "九江龙舟上的木桨和船身近景，兼顾河面。",
+    "connection_note": "节庆与龙舟水时段关联，不将某次比赛描述为确已在雨中举行。",
+    "sources": [
+      {
+        "title": "佛山九江龙舟文化",
+        "url": "https://www.qb.gd.gov.cn/jrqx/content/post_261584.html"
+      },
+      {
+        "title": "龙舟水与端午时段",
+        "url": "https://swj.gz.gov.cn/swyw/rdxw/content/post_10817534.html"
+      }
+    ],
+    "photo": "assets/city-05.jpg",
+    "imageAlt": "九江龙舟与木桨主题照片"
+  },
+  {
+    "city": "韶关",
+    "category": "建筑",
+    "subject": "始兴长围村围屋",
+    "title": "让木头经得住潮湿",
+    "body": "始兴长围村的围屋，把河石、青砖、瓦和木构件组合在一起。杉木走廊与屋顶的木构件，承载着围屋内部的生活。防潮与防腐，也是老屋得以保存的重要条件；守住一处屋檐，需要长期照料其中的材料。",
+    "image": "长围村围屋内的杉木走廊、梁柱与天井。",
+    "sources": [
+      {
+        "title": "韶关围屋及长围村的木构件",
+        "url": "https://www.gdwsw.gov.cn/qsws/content/post_31294.html"
+      }
+    ],
+    "photo": "assets/city-06.jpeg",
+    "imageAlt": "始兴长围村围屋主题照片"
+  },
+  {
+    "city": "河源",
+    "category": "食物",
+    "subject": "连平陂头米粉",
+    "title": "米粉要等一个晴天",
+    "body": "连平陂头的手工米粉，制作后要铺在小竹笪上晒干，再放到干燥通风处保存。细细的粉条从湿润走向干燥，制作的节奏也受到晴雨影响。一份米粉，让人看见食物背后的阳光、时间和等待。",
+    "image": "小竹笪上晾晒的陂头米粉近景。",
+    "sources": [
+      {
+        "title": "连平陂头米粉制作技艺",
+        "url": "https://www.lianping.gov.cn/zjlp/lpwh/ctxs/content/post_390909.html"
+      }
+    ],
+    "photo": "assets/city-07.jpg",
+    "imageAlt": "连平陂头米粉主题照片"
+  },
+  {
+    "city": "梅州",
+    "category": "建筑",
+    "subject": "围龙屋的水塘与排水设施",
+    "title": "房子给水安排去处",
+    "body": "梅州围龙屋常把半月形水塘、禾坪与弧形围屋组合在一起。天井、排水通道和水塘，也是需要保护的生活设施。沿着屋内外水的去处看建筑，可以理解客家民居怎样把居住与水的管理放在同一个布局里。",
+    "image": "围龙屋航拍，清楚呈现半月塘、禾坪和屋体。",
+    "sources": [
+      {
+        "title": "梅州围龙屋的布局",
+        "url": "https://www.qb.gd.gov.cn/jrqx/content/post_65085.html"
+      },
+      {
+        "title": "围龙屋水塘与排水设施的保护",
+        "url": "https://www.mzrd.gov.cn/m/show/7727"
+      }
+    ],
+    "photo": "assets/city-08.jpg",
+    "imageAlt": "围龙屋的水塘与排水设施主题照片"
+  },
+  {
+    "city": "惠州",
+    "category": "食物",
+    "subject": "惠州梅菜",
+    "title": "把鲜菜的味道留下来",
+    "body": "惠州梅菜以芥菜为原料，制作中包含腌制、晾晒和闷堆等工序。晾晒需要与天气打交道，干湿程度也进入了食物的制作过程。从一棵鲜菜到一份梅菜，地方风味里留下了对水分与保存的细致处理。",
+    "image": "晾晒中的梅菜，旁边可附成品的颜色与纹理。",
+    "sources": [
+      {
+        "title": "惠州梅菜的传统加工工序",
+        "url": "https://wsjkw.gd.gov.cn/attachment/0/398/398121/3056236.pdf"
+      }
+    ],
+    "photo": "assets/city-09.jpeg",
+    "imageAlt": "惠州梅菜主题照片"
+  },
+  {
+    "city": "汕尾",
+    "category": "港口与海边生活",
+    "subject": "汕尾渔港",
+    "title": "风雨前，船先靠岸",
+    "body": "汕尾渔港是渔船出海与归航的落脚处。台风来临前，船只回港避风，检查和加固系泊设施。密集停泊的渔船、岸边的码头与水面的倒影，让人看见海边生活与天气的关系，也看见一座港口对归航的意义。",
+    "image": "汕尾渔港停泊的渔船群，突出船身、旗帜和水面倒影，减少上方天空比例。",
+    "sources": [
+      {
+        "title": "汕尾渔船避风与系泊准备",
+        "url": "https://www.shanwei.gov.cn/shanwei/zwgk/jcxx/zwdt/rdgz/content/post_1264118.html"
+      }
+    ],
+    "photo": "assets/city-10.jpg",
+    "imageAlt": "汕尾渔港主题照片"
+  },
+  {
+    "city": "东莞",
+    "category": "日常物品",
+    "subject": "莞草席",
+    "title": "从水边长出的席子",
+    "body": "莞草曾生长在东莞的水边与滩涂，被编成席子、篮子和生活用品。收割后的草要经过处理与晾晒，再进入编织。植物从湿润的环境来到屋内，途中需要合适的干燥时间；一张草席也保留着水乡的材料经验。",
+    "image": "莞草席的编织纹理，搭配当地晒草场景。",
+    "sources": [
+      {
+        "title": "东莞莞草与草编工艺",
+        "url": "https://nyncj.dg.gov.cn/nyncj/gfgs/content/post_4276946.html"
+      },
+      {
+        "title": "莞草编织的生活用品与工序",
+        "url": "https://nyncj.dg.gov.cn/zixun/snkd/content/post_4457653.html"
+      }
+    ],
+    "photo": "assets/city-11.png",
+    "imageAlt": "莞草席主题照片"
+  },
+  {
+    "city": "中山",
+    "category": "食物",
+    "subject": "黄圃腊味",
+    "title": "风味也有干湿季",
+    "body": "黄圃腊味的传统制作利用秋冬较干燥的天气晾晒，今天也结合控温烘干。肉料的风味在失水与加工中逐渐形成。看一排挂起的腊肠，也能理解广东生活怎样随着干湿季节安排制作，并用技术调整对天气的依赖。",
+    "image": "黄圃腊味的晾晒架与红亮腊肠。",
+    "sources": [
+      {
+        "title": "黄圃腊味的季节与工艺",
+        "url": "https://www.zsnews.cn/food/index/view/cateid/46/id/696815.html"
+      },
+      {
+        "title": "中山社科联介绍黄圃腊味的生晒与烘干",
+        "url": "https://zsskl.gov.cn/Article/view/cateid/343/id/14954.html"
+      }
+    ],
+    "photo": "assets/city-12.jpg",
+    "imageAlt": "黄圃腊味主题照片"
+  },
+  {
+    "city": "江门",
+    "category": "食物",
+    "subject": "新会陈皮",
+    "title": "陈年的香气，需要照料",
+    "body": "新会柑的果皮经过开皮、晒制与贮存陈化，逐渐成为陈皮。保存过程中，温度和湿度需要受到控制，晴天也用于翻晒。陈年的香气包含时间，也包含反复检查与照料；潮湿让保存这件事变得格外具体。",
+    "image": "三瓣陈皮的纹理、翻晒场或离地存放的陈皮容器。",
+    "sources": [
+      {
+        "title": "新会陈皮晒制与陈化技艺",
+        "url": "https://www.xinhui.gov.cn/zlxh/rwxh/mzfq/content/post_3337074.html"
+      }
+    ],
+    "photo": "assets/city-13.jpg",
+    "imageAlt": "新会陈皮主题照片"
+  },
+  {
+    "city": "阳江",
+    "category": "日常物品",
+    "subject": "传统漆皮箱",
+    "title": "箱子外的一层保护",
+    "body": "旧时，阳江漆皮箱随外出侨民走向海外。传统漆皮制品具有耐水、防潮的特点，漆层让日常器物获得额外的保护。把视线放在一只旧箱子的表面，可以看见人们怎样用材料与手艺，应对旅途中的水汽和风雨。",
+    "image": "阳江传统漆皮箱，突出漆面的光泽和边角。",
+    "sources": [
+      {
+        "title": "阳江传统漆皮制品与漆艺",
+        "url": "https://www.ihchina.cn/project_details/14550.html"
+      }
+    ],
+    "photo": "assets/city-14.jpg",
+    "imageAlt": "传统漆皮箱主题照片"
+  },
+  {
+    "city": "湛江",
+    "category": "食物",
+    "subject": "湛江干鱼",
+    "title": "晒场上的海味",
+    "body": "湛江干鱼的制作包含盐腌、晾晒和回鲜等工序。鱼肉的干湿程度会影响口感，太阳与制作时间都进入了这份海味。阴雨天气让人留意晾晒的条件；保存渔获，也是一种与天气打交道的劳动。",
+    "image": "湛江干鱼晾晒场，搭配鱼片纹理近景。",
+    "sources": [
+      {
+        "title": "湛江干鱼的晾晒与回鲜工艺",
+        "url": "https://zjamr.zhanjiang.gov.cn/zwdt/xwfbt/content/post_2149876.html"
+      }
+    ],
+    "photo": "assets/city-15.webp",
+    "imageAlt": "湛江干鱼主题照片"
+  },
+  {
+    "city": "茂名",
+    "category": "食物",
+    "subject": "荔枝",
+    "title": "成熟时，也要看天",
+    "body": "茂名荔枝的采收时节，需要留意强降雨和大风。雨水滋养果树，过强的降雨却可能带来裂果，风也可能造成落果。一筐新鲜荔枝背后，有对果实成熟程度与采收天气的判断；雨季进入了果园，也进入餐桌。",
+    "image": "荔枝挂果与采收筐，可用雨后果园照片。",
+    "sources": [
+      {
+        "title": "茂名荔枝采收的气象影响",
+        "url": "https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xjctz/202506/t20250613_7138091.html"
+      }
+    ],
+    "photo": "assets/city-16.png",
+    "imageAlt": "荔枝主题照片"
+  },
+  {
+    "city": "肇庆",
+    "category": "建筑",
+    "subject": "高要黎槎古村",
+    "title": "在水边，选择高处住",
+    "body": "高要黎槎古村环水而建，房舍依托小丘排列。历史上的暴雨与水患，影响了村民对居住高处的选择，排水设施与堤防也参与保护村落。看它的池塘、巷道和地势，可以理解一处聚居空间怎样逐渐适应水的变化。",
+    "image": "黎槎古村航拍，包含村落、小丘与环村水体。",
+    "sources": [
+      {
+        "title": "黎槎古村的地势与水患应对",
+        "url": "https://www.gdszx.gov.cn/attachment/0/0/412/38812.pdf"
+      }
+    ],
+    "photo": "assets/city-17.jpg",
+    "imageAlt": "高要黎槎古村主题照片"
+  },
+  {
+    "city": "清远",
+    "category": "日常物品",
+    "subject": "英德红茶与密封茶罐",
+    "title": "把干茶的香气收好",
+    "body": "英德红茶经过萎凋、揉捻、发酵和烘干等工序，才来到茶桌。制好的干茶仍要应对空气中的潮气，包装与密封容器帮助保存风味。雨季里，一只小小的茶罐，把地方茶香与屋内湿度的变化联系起来。",
+    "image": "装有英德红茶的密封茶罐与干茶近景。",
+    "connection_note": "茶罐为现代日常物件切入，不称其为清远独有器物。",
+    "sources": [
+      {
+        "title": "英德红茶制作工序",
+        "url": "https://www.yingde.gov.cn/zljs/cwzl/wcnrddjs/content/post_1571637.html"
+      },
+      {
+        "title": "茶叶包装与贮藏",
+        "url": "https://www.samr.gov.cn/spcjs/yjjl/art/2021/art_2696af76e25c4af589267de48d7e3d5b.html"
+      }
+    ],
+    "photo": "assets/city-18.jpg",
+    "imageAlt": "英德红茶与密封茶罐主题照片"
+  },
+  {
+    "city": "潮州",
+    "category": "日常物品",
+    "subject": "工夫茶具",
+    "title": "雨声旁的一张茶席",
+    "body": "潮州工夫茶把温壶、烫杯、分茶和待客连在一起，小壶小杯构成亲近的日常空间。雨敲屋檐，热水在壶边流动，一杯茶留出坐下来交谈的时间。雨季里的待客与交谈，仍可以围着一张茶桌展开。",
+    "image": "潮州工夫茶小壶、小杯与茶盘，背景可带雨窗。",
+    "connection_note": "雨天茶席为编辑场景；不声称工夫茶源于雨季或具有祛湿疗效。",
+    "sources": [
+      {
+        "title": "潮州工夫茶艺的器具与程式",
+        "url": "https://www.ihchina.cn/project_details/15247.html"
+      }
+    ],
+    "photo": "assets/city-19.jpg",
+    "imageAlt": "工夫茶具主题照片"
+  },
+  {
+    "city": "揭阳",
+    "category": "日常物品",
+    "subject": "塑料拖鞋",
+    "title": "雨天的一双鞋",
+    "body": "揭阳的塑料鞋制造，把一种轻便、耐水的日常物品送入许多家庭。雨天鞋袜容易被打湿，一双可以清洗的拖鞋，体现了人们对材料和穿着的选择。普通鞋底与鞋面背后，也连接着当地的工厂和生活需求。",
+    "image": "本地生产的塑料拖鞋实物，突出材质与鞋底纹理。",
+    "connection_note": "耐水不等于防滑；不作安全性能承诺，不建议穿拖鞋涉洪水。",
+    "sources": [
+      {
+        "title": "揭阳塑料鞋产业介绍",
+        "url": "https://rc.jieyang.gov.cn/front/detail_frontRcyz.action?rcyz.id=51"
+      }
+    ],
+    "photo": "assets/city-20.png",
+    "imageAlt": "塑料拖鞋主题照片"
+  },
+  {
+    "city": "云浮",
+    "category": "食物",
+    "subject": "新兴话梅",
+    "title": "把鲜果做成酸甜",
+    "body": "新兴话梅的加工包含盐腌、脱盐和多次晾晒等环节，鲜果逐渐成为可以保存的凉果。晾晒把制作与晴雨联系起来，干燥也需要控制。袋中的酸甜，保留了地方手艺对果实、水分和时间的处理。",
+    "image": "新兴话梅成品，搭配晾晒中的果胚。",
+    "sources": [
+      {
+        "title": "新兴话梅加工工序",
+        "url": "https://www.yunfu.gov.cn/attachment/0/32/32425/1463538.pdf"
+      }
+    ],
+    "photo": "assets/city-21.jpg",
+    "imageAlt": "新兴话梅主题照片"
+  }
+]

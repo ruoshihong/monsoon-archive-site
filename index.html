@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071d37">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Monsoon Archive · 与雨共同生活</title>
+  <meta name="description" content="一份关于广东雨季的数字人文档案。从45个人的故事、21座城市与日常物件，理解雨落下之后的生活。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23071d37'/%3E%3Cpath d='M12 11v18m8-18v18m8-18v18' stroke='%237bc8f5' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <link rel="stylesheet" href="prototype.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <div class="prototype-notice" role="status">网站原型 · 视觉与交互测试中，访谈内容待最终核实与替换</div>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Monsoon Archive 首页"><span class="brand-mark" aria-hidden="true">Ⅲ</span><span>Monsoon<span class="brand-small">THE LIVING ARCHIVE</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">目录 <span>＋</span></button>
+    <nav id="primary-nav" aria-label="主导航"><a href="#/" data-route="home">首页</a><a href="#/map" data-route="map">Rain Map</a><a href="#/voices" data-route="voices">Rain Voices</a><a href="#/stories" data-route="stories">Rain Stories</a><a href="#/objects" data-route="objects">Rain Objects</a><a href="#/reflection" data-route="reflection">关于雨</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-photo"></div><canvas id="rain" aria-hidden="true"></canvas>
+      <div class="hero-top"><span>广东 · 一份仍在生长的雨季档案</span><button class="rain-toggle" aria-pressed="true">雨幕 · 开</button></div>
+      <div class="hero-body"><p class="eyebrow">THE MONSOON ARCHIVE</p><h1>与雨<br><em>共同生活。</em></h1><div class="hero-bottom"><p class="hero-description">雨改变一座城市的方式，<br>藏在人们的日常里。<br><span>从一段故事、一处屋檐、一件物品，走进广东的雨季。</span></p><a class="button light" href="#/map">从地图出发</a></div></div>
+      <div class="hero-foot"><span>21 座城市 / 45 个声音 / 一个共同的雨季</span><a href="#explore">向下，走进档案</a></div>
+    </section>
+    <section id="explore" class="section intro"><div><p class="eyebrow">EXPLORE THE ARCHIVE</p><h2>雨落下之后，<br>生活如何继续？</h2></div><p>这是一项关于广东雨季的数字人文探索。地图记录地方与气候，故事保留人的记忆，物件呈现与湿度相处的办法。你可以从任何一个入口开始。</p></section>
+    <section class="section gateways" aria-label="档案板块"><a href="#/map"><span>01 / PLACES</span><h3>Rain Map</h3><p>在21座城市里，看见雨与地方生活的联系。</p></a><a href="#/voices"><span>02 / PEOPLE</span><h3>Rain Voices</h3><p>为45个雨季声音预留的阅读空间。</p></a><a href="#/stories"><span>03 / PHOTOGRAPHY · 整理中</span><h3>Rain Stories</h3><p>为街道、屋檐与雨中片刻留下影像。</p></a><a href="#/objects"><span>04 / OBJECTS · 整理中</span><h3>Rain Objects</h3><p>从身边的物品，理解与潮湿相处的智慧。</p></a><a href="#/reflection"><span>05 / REFLECTION · 整理中</span><h3>Physics Meets Humanity</h3><p>连接雨的形成，与雨落下之后的生活。</p></a></section>
+  </main>
+  <footer><a class="footer-title" href="#/">Monsoon Archive</a><p>广东雨季与日常生活 · 数字人文项目</p><span>第一版 · 档案持续整理中</span></footer>
+  <dialog id="story-dialog" aria-labelledby="dialog-title"></dialog>
+</body>
+</html>
