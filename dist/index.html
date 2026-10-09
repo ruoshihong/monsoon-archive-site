@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071d37">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Living with Rain · A Living Archive of Guangdong’s Rainy Season</title>
+  <meta name="description" content="A digital humanities archive of Guangdong’s rainy season, told through 45 voices, 21 cities, photographs, and everyday objects.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23071d37'/%3E%3Cpath d='M10 23c0-4 3-7 7-7 2-5 10-5 12 0 4 0 7 3 7 7s-3 7-7 7H17c-4 0-7-3-7-7Z' fill='%2393ceec'/%3E%3Cpath d='M18 32l-2 4m9-4l-2 4m9-4l-2 4' stroke='%23f7fbff' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css?v=20261009i">
+  <script src="english-content.js" defer></script>
+  <script src="app.js?v=20261009i" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Living with Rain home"><span data-brand-title>Living with Rain</span><span class="brand-small" data-brand-subtitle>A LIVING ARCHIVE OF GUANGDONG’S RAINY SEASON</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu <span>＋</span></button>
+    <nav id="primary-nav" aria-label="Primary navigation"><label class="language-picker header-language"><span aria-hidden="true">🌍</span><span class="sr-only">Language</span><select data-language-select aria-label="Language"><option value="en">EN</option><option value="zh">中文</option></select></label><a href="#/" data-route="home">Home</a><a href="#/reflection" data-route="reflection">About Rain</a><a href="#/map" data-route="map">Rain Map</a><a href="#/voices" data-route="voices">Rain Voices</a><a href="#/shapes" data-route="shapes">Rain Shapes</a><a href="#/objects" data-route="objects">Rain Objects</a></nav>
+  </header>
+  <main id="main">
+    <section class="home-portal" aria-label="Living with Rain entrance">
+      <div class="home-sky" aria-hidden="true"></div><canvas id="rain" aria-hidden="true"></canvas>
+      <section class="home-opening" aria-labelledby="opening-title">
+        <div class="opening-card">
+          <p class="opening-kicker">LIVING WITH RAIN</p>
+          <h1 id="opening-title">Living<br>with Rain</h1>
+          <p>The ways rain changes a city<br>are hidden in everyday life.</p>
+          <p class="opening-detail">Enter Guangdong’s rainy season through a story, a roof, or an object.</p>
+          <div class="opening-actions"><button class="opening-enter" data-enter-archive>CLICK TO CONTINUE</button><label class="language-picker opening-language"><span aria-hidden="true">🌍</span><span>Language</span><select data-language-select aria-label="Language"><option value="en">English</option><option value="zh">中文</option></select></label></div>
+        </div>
+      </section>
+      <section class="home-directory" aria-label="Archive sections" aria-hidden="true" inert>
+        <div class="directory-copy">
+          <p>This is a digital humanities exploration of Guangdong’s rainy season. The map traces place and climate, stories hold personal memory, and objects reveal ways of living with humidity. Begin anywhere.</p>
+        </div>
+        <div class="cloud-gateways">
+          <a href="#/reflection"><span class="cloud-symbol" aria-hidden="true"></span><strong>About Rain</strong></a>
+          <a href="#/map"><span class="cloud-symbol" aria-hidden="true"></span><strong>Rain Map</strong></a>
+          <a href="#/voices"><span class="cloud-symbol" aria-hidden="true"></span><strong>Rain Voices</strong></a>
+          <a href="#/shapes"><span class="cloud-symbol" aria-hidden="true"></span><strong>Rain Shapes</strong></a>
+          <a href="#/objects"><span class="cloud-symbol" aria-hidden="true"></span><strong>Rain Objects</strong></a>
+        </div>
+      </section>
+    </section>
+  </main>
+  <dialog id="story-dialog" aria-labelledby="dialog-title"></dialog>
+</body>
+</html>
