@@ -2,7 +2,7 @@ const main=document.querySelector('#main');
 const dialog=document.querySelector('#story-dialog');
 const menuButton=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#primary-nav');
-let voices=[],cards=[],voicesZh=[],cardsZh=[],geography=[],shapePhotos=[],selectedCity='广州',rainEnabled=!matchMedia('(prefers-reduced-motion: reduce)').matches,objectGridScroll=0,lastPage='home',lastObjectSlug='',homeEntered=false;
+let voices=[],cards=[],voicesZh=[],cardsZh=[],geography=[],shapePhotos=[],approvedContributions=[],selectedCity='广州',rainEnabled=!matchMedia('(prefers-reduced-motion: reduce)').matches,objectGridScroll=0,lastPage='home',lastObjectSlug='',homeEntered=false;
 let language=(()=>{try{return localStorage.getItem('living-with-rain-language')||'en'}catch{return'en'}})();
 let modelViewerLoader;
 const themes=['Working in the Rain','Shelter & Care','Living with Humidity','Sounds & Landscapes','Growing Up & Belonging'];
@@ -107,6 +107,7 @@ function hydrateLocalizedData(){
   const en=window.PLUM_RAIN_EN||{};
   const sourceVoices=language==='zh'?voicesZh:voicesZh.map(item=>({...item,...(en.voices?.[item.id]||{})}));
   voices=sourceVoices.map(firstPersonVoice);
+  approvedContributions.filter(item=>item.type==='story').forEach((item,index)=>voices.push({id:item.id,order:sourceVoices.length+index+1,name:item.name,age:item.age,role:language==='zh'?`${item.age}岁`:`Age ${item.age}`,city:item.place,title:item.title,hook:item.excerpt,body:item.body}));
   cards=language==='zh'?cardsZh.map(item=>({...item})):cardsZh.map(item=>({...item,...(en.cards?.[item.city]||{})}));
   document.documentElement.lang=language==='zh'?'zh-CN':'en';
 }
@@ -145,8 +146,19 @@ function startShapeRain(){
 function rainShapesPage(){
   document.querySelector('#shape-rain')?.remove();
   const canvas=document.createElement('canvas');canvas.id='shape-rain';canvas.setAttribute('aria-hidden','true');document.body.append(canvas);
-  main.innerHTML=`<section class="rain-shapes-page">${communityShareMarkup('photo')}<div class="rain-shapes-grid" aria-label="${tr('Rain Shapes photography collection','雨的形状摄影集')}">${shapePhotos.map((src,index)=>`<figure class="shape-frame"><img src="${esc(src)}" alt="${tr('Rain form photograph','雨的形态照片')} ${index+1}" loading="${index<8?'eager':'lazy'}" decoding="async"></figure>`).join('')}</div></section>`;
+  main.innerHTML=`<section class="rain-shapes-page">${communityShareMarkup('photo')}<div class="rain-shapes-grid" aria-label="${tr('Rain Shapes photography collection','雨的形状摄影集')}">${shapeFramesMarkup()}</div></section>`;
   bindCommunityShare();startShapeRain();
+}
+
+function shapeFramesMarkup(){
+  const archive=shapePhotos.map((src,index)=>`<figure class="shape-frame"><img src="${esc(src)}" alt="${tr('Rain form photograph','雨的形态照片')} ${index+1}" loading="${index<8?'eager':'lazy'}" decoding="async"></figure>`).join('');
+  const shared=approvedContributions.filter(item=>item.type==='photo').map(item=>`<figure class="shape-frame"><img src="${esc(item.photoUrl)}" alt="${esc(item.body)}" loading="lazy" decoding="async"><figcaption>${esc(item.body)} · ${esc(item.place)}</figcaption></figure>`).join('');
+  return archive+shared;
+}
+
+async function refreshContributions(page){
+  if(page!=='voices'&&page!=='shapes')return;
+  try{const response=await fetch('/api/contributions',{cache:'no-store'});if(!response.ok)return;const data=await response.json();if(!Array.isArray(data.items))return;approvedContributions=data.items;hydrateLocalizedData();if(document.body.dataset.page==='voices')filterVoices();if(document.body.dataset.page==='shapes'){const grid=document.querySelector('.rain-shapes-grid');if(grid)grid.innerHTML=shapeFramesMarkup()}}catch(error){console.warn('Contributions are temporarily unavailable',error)}
 }
 
 function communityShareMarkup(type){
@@ -154,7 +166,17 @@ function communityShareMarkup(type){
   const title=isPhoto?tr('Share your view','分享你眼中的雨'):tr('Share your rain story','分享你的雨天故事');
   const prompt=isPhoto?tr('Add one photograph to the living archive.','把一张关于雨的照片放进这份生活档案。'):tr('Add one memory to the living archive.','把一段雨天记忆放进这份生活档案。');
   const fields=isPhoto?`<div class="share-field-row"><label><span>${tr('Name or nickname','姓名或网名')}</span><input name="name" maxlength="60" autocomplete="nickname" required></label><label><span>${tr('Where was it taken?','拍摄地点')}</span><input name="place" maxlength="100" autocomplete="address-level2" required></label></div><label class="share-file-field"><span>${tr('Rain photograph','雨天照片')}</span><input type="file" name="photo" accept="image/jpeg,image/png,image/webp" required><span class="share-file-prompt" data-file-prompt>${tr('Choose a JPG, PNG, or WebP image · up to 12 MB','选择 JPG、PNG 或 WebP 图片 · 最大12 MB')}</span><img data-file-preview alt="" hidden></label><label><span>${tr('A short note about this moment','关于这个瞬间的一句话')}</span><textarea name="caption" rows="3" maxlength="500" required></textarea></label>`:`<div class="share-field-row"><label><span>${tr('Name or nickname','姓名或网名')}</span><input name="name" maxlength="60" autocomplete="nickname" required></label><label><span>${tr('Age','年龄')}</span><input name="age" maxlength="30" inputmode="numeric" placeholder="${tr('e.g. 24','例如：24')}" required></label></div><label><span>${tr('Where do you live?','你居住在哪里？')}</span><input name="place" maxlength="100" autocomplete="address-level2" required></label><label><span>${tr('Tell us one rain-day story','讲述一个属于你的雨天故事')}</span><textarea name="story" rows="6" minlength="40" maxlength="2500" required></textarea></label>`;
-  return `<section class="community-share community-share-${type}" data-community-share="${type}"><div class="community-share-card"><div class="community-share-inner"><div class="community-share-front"><button type="button" class="community-share-open" aria-expanded="false"><span>${isPhoto?'＋ PHOTO':'＋ STORY'}</span><strong>${title}</strong><small>${prompt}</small></button></div><form class="community-share-back" enctype="multipart/form-data" aria-hidden="true" inert><div class="share-form-head"><div><span>${isPhoto?tr('RAIN SHAPES CONTRIBUTION','雨的形状 · 投稿'):tr('RAIN VOICES CONTRIBUTION','雨中声音 · 投稿')}</span><h2>${title}</h2></div><button type="button" class="community-share-close" aria-label="${tr('Close contribution form','关闭投稿表单')}">${tr('Close','关闭')} ×</button></div><div class="share-form-fields">${fields}</div><label class="share-consent"><input type="checkbox" name="permission" required><span>${tr('I made this contribution or have permission to share it, and I agree that it may be lightly edited or summarized before publication.','这是我创作的内容，或我已获得分享许可；我同意网站在发布前对内容进行轻微编辑或摘要。')}</span></label><div class="share-submit-row"><button type="submit" class="community-share-submit">${tr('Send for review','提交审核')}</button><p class="community-share-status" data-share-status aria-live="polite"></p></div></form></div></div></section>`;
+  return `<section class="community-share community-share-${type}" data-community-share="${type}"><div class="community-share-card"><div class="community-share-inner"><div class="community-share-front"><button type="button" class="community-share-open" aria-expanded="false"><span>${isPhoto?'＋ PHOTO':'＋ STORY'}</span><strong>${title}</strong><small>${prompt}</small></button></div><form class="community-share-back" enctype="multipart/form-data" aria-hidden="true" inert><div class="share-form-head"><div><span>${isPhoto?tr('RAIN SHAPES CONTRIBUTION','雨的形状 · 投稿'):tr('RAIN VOICES CONTRIBUTION','雨中声音 · 投稿')}</span><h2>${title}</h2></div><button type="button" class="community-share-close" aria-label="${tr('Close contribution form','关闭投稿表单')}">${tr('Close','关闭')} ×</button></div><div class="share-form-fields">${fields}<input name="website" tabindex="-1" autocomplete="off" hidden></div><label class="share-consent"><input type="checkbox" name="permission" required><span>${tr('I made this contribution or have permission to share it, and I agree that it may be lightly edited or summarized before publication.','这是我创作的内容，或我已获得分享许可；我同意网站在发布前对内容进行轻微编辑或摘要。')}</span></label><div class="share-submit-row"><button type="submit" class="community-share-submit">${tr('Send for review','提交审核')}</button><p class="community-share-status" data-share-status aria-live="polite"></p></div></form></div></div></section>`;
+}
+
+async function publicationPhoto(file){
+  const bitmap=await createImageBitmap(file);
+  const scale=Math.min(1,3000/Math.max(bitmap.width,bitmap.height));
+  const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(bitmap.width*scale));canvas.height=Math.max(1,Math.round(bitmap.height*scale));
+  const context=canvas.getContext('2d');if(!context)throw new Error('photo processing unavailable');
+  context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);context.drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close();
+  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',.88));if(!blob)throw new Error('photo processing unavailable');
+  return new File([blob],file.name.replace(/\.[^.]+$/,'')+'.jpg',{type:'image/jpeg'});
 }
 
 function bindCommunityShare(){
@@ -163,7 +185,21 @@ function bindCommunityShare(){
     const setOpen=value=>{card.classList.toggle('is-open',value);open.setAttribute('aria-expanded',String(value));front.inert=value;front.setAttribute('aria-hidden',String(value));form.inert=!value;form.setAttribute('aria-hidden',String(!value));if(value)requestAnimationFrame(()=>form.querySelector('input,textarea')?.focus({preventScroll:true}));else open.focus({preventScroll:true})};
     open.onclick=()=>setOpen(true);close.onclick=()=>setOpen(false);
     if(file)file.onchange=()=>{const selected=file.files?.[0];if(preview.dataset.objectUrl){URL.revokeObjectURL(preview.dataset.objectUrl);delete preview.dataset.objectUrl}if(!selected){preview.hidden=true;prompt.textContent=tr('Choose a JPG, PNG, or WebP image · up to 12 MB','选择 JPG、PNG 或 WebP 图片 · 最大12 MB');return}prompt.textContent=`${selected.name} · ${(selected.size/1024/1024).toFixed(1)} MB`;const objectUrl=URL.createObjectURL(selected);preview.src=objectUrl;preview.dataset.objectUrl=objectUrl;preview.hidden=false};
-    form.onsubmit=async event=>{event.preventDefault();status.className='community-share-status';status.textContent=tr('Sending…','正在提交…');const selected=file?.files?.[0];if(selected&&(!['image/jpeg','image/png','image/webp'].includes(selected.type)||selected.size>12*1024*1024)){status.classList.add('is-error');status.textContent=tr('Please choose a JPG, PNG, or WebP image smaller than 12 MB.','请选择小于12 MB的 JPG、PNG 或 WebP 图片。');return}const data=new FormData(form);data.append('submissionType',root.dataset.communityShare);data.append('language',language);data.append('submittedAt',new Date().toISOString());const endpoint=document.documentElement.dataset.submissionEndpoint||window.LIVING_WITH_RAIN_SUBMISSION_ENDPOINT||'/api/submissions';try{const response=await fetch(endpoint,{method:'POST',body:data,headers:{'Accept':'application/json'}});if(!response.ok)throw new Error('submission unavailable');status.classList.add('is-success');status.textContent=tr('Thank you. Your contribution is now in our review queue. If selected, it may be lightly edited or summarized before it appears on the website.','谢谢，你的投稿已经进入审核队列。入选后，我们可能会在发布前进行轻微编辑或摘要。');form.reset();if(preview){if(preview.dataset.objectUrl)URL.revokeObjectURL(preview.dataset.objectUrl);preview.hidden=true;delete preview.dataset.objectUrl;prompt.textContent=tr('Choose a JPG, PNG, or WebP image · up to 12 MB','选择 JPG、PNG 或 WebP 图片 · 最大12 MB')}}catch{status.classList.add('is-error');status.textContent=tr('This preview cannot send the contribution yet. Your entries remain in the form; please try again after the review inbox is connected.','这个预览版本暂时还不能送出投稿。你填写的内容仍保留在表单中，请在审核收件箱接通后重试。')}};
+    form.onsubmit=async event=>{
+      event.preventDefault();status.className='community-share-status';status.textContent=tr('Sending…','正在提交…');
+      const selected=file?.files?.[0];
+      if(selected&&(!['image/jpeg','image/png','image/webp'].includes(selected.type)||selected.size>12*1024*1024)){
+        status.classList.add('is-error');status.textContent=tr('Please choose a JPG, PNG, or WebP image smaller than 12 MB.','请选择小于12 MB的 JPG、PNG 或 WebP 图片。');return;
+      }
+      const data=new FormData(form);data.append('submissionType',root.dataset.communityShare);data.append('language',language);
+      try{
+        if(selected)data.set('photo',await publicationPhoto(selected));
+        const response=await fetch('/api/submissions',{method:'POST',body:data,headers:{'Accept':'application/json'}});
+        if(!response.ok){const error=await response.json().catch(()=>({}));throw new Error(error.error||'submission unavailable')}
+        status.classList.add('is-success');status.textContent=tr('Thank you. Your contribution is now in our review queue. If selected, it may be lightly edited or summarized before it appears on the website.','谢谢，你的投稿已经进入审核队列。入选后，我们可能会在发布前进行轻微编辑或摘要。');
+        form.reset();if(preview){if(preview.dataset.objectUrl)URL.revokeObjectURL(preview.dataset.objectUrl);preview.hidden=true;delete preview.dataset.objectUrl;prompt.textContent=tr('Choose a JPG, PNG, or WebP image · up to 12 MB','选择 JPG、PNG 或 WebP 图片 · 最大12 MB')}
+      }catch(error){status.classList.add('is-error');status.textContent=tr('Your contribution was not sent. Please try again shortly.','投稿未能送出，请稍后重试。')+(error?.message&&error.message!=='submission unavailable'?` (${error.message})`:'')}
+    };
   });
 }
 function stableShapeShuffle(list){
@@ -370,5 +406,6 @@ function renderRoute(){
   const currentObject=rainObjects.find(item=>item.slug===objectSlug);document.title=(currentObject?localizedObject(currentObject).name+' · '+copy().objects:titles[page])+' | '+copy().brand;if(restoreObjectGrid)requestAnimationFrame(()=>window.scrollTo({top:objectGridScroll,behavior:'instant'}));else window.scrollTo({top:0,behavior:'instant'});
   main.setAttribute('tabindex','-1');main.focus({preventScroll:true});
   lastPage=page;lastObjectSlug=objectSlug;
+  refreshContributions(page);
 }
 Promise.all(['voices','cards','map','rain-shapes'].map(name=>fetch('assets/'+name+'.json').then(r=>{if(!r.ok)throw new Error(name);return r.json()}))).then(([v,c,g,s])=>{voicesZh=v;cardsZh=c;geography=g;shapePhotos=stableShapeShuffle(s);hydrateLocalizedData();updateShell();bindLanguagePickers();window.addEventListener('hashchange',renderRoute);renderRoute()}).catch(()=>{main.insertAdjacentHTML('afterbegin',`<div class="load-error" role="alert">${tr('The archive could not be loaded.','档案暂时无法加载。')} <button onclick="location.reload()">${tr('Reload','重新加载')}</button></div>`);startRain()});
