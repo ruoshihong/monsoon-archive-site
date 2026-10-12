@@ -1,8 +1,6 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://living-with-rain.black-eel-2191.chatgpt.site/api/:path*"
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "outputDirectory": "dist",
+  "regions": ["hkg1"]
 }

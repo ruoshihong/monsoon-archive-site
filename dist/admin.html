@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Living with Rain · 投稿审核</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header><a href="/">← 返回网站</a><h1>Living with Rain</h1><button id="logout" hidden>退出</button></header>
+  <main>
+    <section id="login" class="login-card">
+      <p class="eyebrow">ROSE'S ARCHIVE</p><h2>投稿审核</h2>
+      <form><label>管理员密码<input name="password" type="password" autocomplete="current-password" required autofocus></label><button>登录</button><p class="status" aria-live="polite"></p></form>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="dashboard-head"><div><p class="eyebrow">REVIEW DESK</p><h2>投稿审核</h2></div><button id="refresh">刷新</button></div>
+      <nav><button class="tab active" data-filter="pending">待审核 <span id="pending-count">0</span></button><button class="tab" data-filter="approved">已发布 <span id="approved-count">0</span></button></nav>
+      <div id="items" class="items"></div><p id="empty" class="empty" hidden>这里还没有内容。</p>
+    </section>
+  </main>
+</body>
+</html>
