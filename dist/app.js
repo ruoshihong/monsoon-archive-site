@@ -106,8 +106,8 @@ function firstPersonVoice(item){const convert=language==='zh'?firstPersonChinese
 function hydrateLocalizedData(){
   const en=window.PLUM_RAIN_EN||{};
   const sourceVoices=language==='zh'?voicesZh:voicesZh.map(item=>({...item,...(en.voices?.[item.id]||{})}));
-  voices=sourceVoices.map(firstPersonVoice);
-  approvedContributions.filter(item=>item.type==='story').forEach((item,index)=>voices.push({id:item.id,order:sourceVoices.length+index+1,name:item.name,age:item.age,role:language==='zh'?`${item.age}岁`:`Age ${item.age}`,city:item.place,title:item.title,hook:item.excerpt,body:item.body}));
+  const sharedVoices=approvedContributions.filter(item=>item.type==='story').map((item,index)=>({id:item.id,order:sourceVoices.length+index+1,name:item.name,age:item.age,role:language==='zh'?`${item.age}岁`:`Age ${item.age}`,city:item.place,title:item.title,hook:item.excerpt,body:item.body}));
+  voices=[...sharedVoices,...sourceVoices.map(firstPersonVoice)];
   cards=language==='zh'?cardsZh.map(item=>({...item})):cardsZh.map(item=>({...item,...(en.cards?.[item.city]||{})}));
   document.documentElement.lang=language==='zh'?'zh-CN':'en';
 }
@@ -153,7 +153,7 @@ function rainShapesPage(){
 function shapeFramesMarkup(){
   const archive=shapePhotos.map((src,index)=>`<figure class="shape-frame"><img src="${esc(src)}" alt="${tr('Rain form photograph','雨的形态照片')} ${index+1}" loading="${index<8?'eager':'lazy'}" decoding="async"></figure>`).join('');
   const shared=approvedContributions.filter(item=>item.type==='photo').map(item=>`<figure class="shape-frame"><img src="${esc(item.photoUrl)}" alt="${esc(item.body)}" loading="lazy" decoding="async"><figcaption>${esc(item.body)} · ${esc(item.place)}</figcaption></figure>`).join('');
-  return archive+shared;
+  return shared+archive;
 }
 
 async function refreshContributions(page){
